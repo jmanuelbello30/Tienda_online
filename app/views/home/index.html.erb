@@ -38,9 +38,9 @@
                     <div class="col-sm-3 separate-cards">  
                         <div class="card">
                             <% if(product.url_image.blank?) %> 
-                            <%= image_tag("no-image.jpg", :alt => "no hay imagen del producto", class:"card-img-top") %>
+                                <%= image_tag("no-image.jpg", :alt => "no hay imagen del producto", class:"card-img-top") %>
                             <% else %>
-                            <img src=<%=product.url_image %> class="card-img-top" alt="producto"></img>
+                                <img src=<%=product.url_image %> class="card-img-top" alt="producto"></img>
                             <% end %>
 
                             <div class="card-body">
