@@ -1,0 +1,195 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap";
+@import "font-awesome";
+
+/* NavBar and Scroll to top*/
+@media (max-width:1536px){
+    .nav-mar {
+        margin-left: 430px;
+        margin-top: 5px;
+    }
+
+    .principal-title {
+        padding-top: 15px;
+        color: white;
+        font-size: 30px;
+        margin-left: 460px;
+        margin-right: 10px;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    /* scroll to top */
+    .follow-screen {
+        font-size: 50px;
+        position: fixed;
+        right: -15px;
+        bottom: 150px;
+        margin: 0px 60px 0px 0px;
+        cursor: pointer;
+    }
+  }
+
+  @media (min-width: 1920px){
+    .nav-mar{
+        margin-left: 600px;
+        margin-top: 5px;
+    }
+
+    .principal-title{
+        padding-top:15px;
+        color: white;
+        font-size: 30px;
+        margin-left: 635px;
+        margin-right: 10px;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    /* scroll to top */
+    .follow-screen {
+        font-size: 50px;
+        position: fixed;
+        right: 20px;
+        bottom: 150px;
+        margin: 0px 60px 0px 0px;
+        cursor: pointer;
+    }
+  }
+
+/* NavBar home image*/
+.link-home{
+    display: inline-flex;
+}
+
+/* input Search*/
+#search{
+    border-radius: 10px;
+    height: 35px;
+    margin-top: 5px;
+    padding-left: 10px;
+    width: 350px;
+    outline: transparent;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.icon-s-size{
+    font-size: 20px;
+}
+
+.search_icon{
+    position: relative;
+    top: 7px;
+    float: right;
+    right: 40px;
+    color: #CCC;
+}
+
+.btn-outline-success{
+    height: 31px;
+    margin-bottom: 4px;
+}
+
+.btn:hover {
+    color: #0071ce;
+}
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.bg-light{
+    background-color: #0071ce !important;
+    height: 70px;
+}
+
+/*Menu of products*/
+.letters-menu{
+    font-size: 16px !important;
+    margin-right: 50px;
+    font-family: 'Fjalla One', sans-serif;
+    color: white !important;
+    text-transform: uppercase;
+
+}
+
+/*Category Title about products*/
+.category-title{
+    margin-left: 140px;
+    margin-top: 40px;
+    font-size: 25px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+/*Margin for sorting cards*/
+.marg-row{
+    margin-right: 110px;
+    margin-left: 110px;
+}
+
+/*Cards for products*/
+.card-img-top {
+    width: 100%;
+    height: 13vw;
+}
+
+.card{
+    min-height: 200px;
+    width: 295px;
+}
+
+.card-title{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.btn-primary{
+    margin-left: 100px;
+    margin-bottom: 15px;
+}
+
+.btn-primary:hover{
+    color: white;
+}
+
+.separate-cards{
+    margin-bottom: 15px;
+    margin-top: 35px;
+}
+
+/* Footer */
+.py-3 {
+    margin: 100px 0px 0px 0px;
+    background-color: #0071ce !important;
+    height: 155px;
+  }
+  
+  .icon-footer {
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+  }
+  
+  i:hover {
+    color: #caeefc;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+  }
+  
+  .icon-center {
+    text-align: center;
+    font-size: 25px;
+  }
+
+.fa-arrow-circle-up:hover{
+    color: #0071ce
+}

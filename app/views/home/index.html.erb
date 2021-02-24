@@ -1,1 +1,97 @@
-<h1>JoseEcommerce</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="principal-title">La Tiendita</div>
+        <a href="/" class="link-home">
+            <%= image_tag("inicio_tienda.png", style:"width: 70px; margin-right: 25px;") %>
+        </a>
+        <%= form_tag('/') do -%>
+            <button class="btn search_icon" type="submit"><span class="material-icons icon-s-size ">search</span></button>
+            <%= text_field_tag 'search', @search, placeholder: ' Buscar (ej: Cerveza, Pisco, etc)' %>
+        <% end -%>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-mar">
+            <%- @categories.each do |category| %>
+                <li class="nav-item">
+                    <a href="/<%=category.id%>" class="letters-menu" aria-current="page">
+                        <%=category.name %>
+                    </a>
+                </li>
+            <% end %>
+        </ul>
+    </nav>
+
+    <div class="category-title">
+        <% if(@search.blank?) %>
+            <%=@current_category.name.titleize %> - Productos 
+        <% else %>
+            RESULTADOS PARA: <%=@search %> 
+        <% end %>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row marg-row">
+                <% if(@products.blank?) %>   
+                    <div style="font-family: 'Fjalla One', sans-serif; font-size: 20px; margin-left: 16px;">No se encontraron resultados</div>
+                <% else %>
+                <%- @products.each do |product| %>
+                    <div class="col-sm-3 separate-cards">  
+                        <div class="card">
+                            <% if(product.url_image.blank?) %> 
+                            <%= image_tag("no-image.jpg", :alt => "no hay imagen del producto", class:"card-img-top") %>
+                            <% else %>
+                            <img src=<%=product.url_image %> class="card-img-top" alt="producto"></img>
+                            <% end %>
+
+                            <div class="card-body">
+                                <h5 class="card-title"><%=product.name %></h5>
+                                <p class="card-text">$<%=product.price %></p>
+                                <button type="button" class="btn btn-primary disabled"><span class="material-icons">add_shopping_cart</span></button>
+                                
+                                <% if(product.discount == 0) %> 
+                                    <p class="card-text" style="color:white;">.</p>
+                                <% else %>
+                                    <p class="card-text">Producto en descuento <%=product.discount %>%</p>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-4 flex-shrink-0 bg-dark py-3">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+                <!-- Social buttons -->
+                <ul class="list-unstyled list-inline icon-center">
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-fb mx-1" target="_blank"
+                            href="https://github.com/jmanuelbello30?tab=repositories" rel="noopener noreferrer">
+                            <i class="fa fa-github icon-footer"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-li mx-1" target="_blank" href="https://www.linkedin.com/in/belloal/"
+                            rel="noopener noreferrer">
+                            <i class="fa fa-linkedin icon-footer"></i>
+                        <a class="ToTop follow-screen" onclick="animateToTop(event)"><i class="fa fa-arrow-circle-up"></i></a>
+                    </li>
+                </ul>
+                <!-- Social buttons -->
+
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-white">© 2021 Made by J.M</div>
+        <!-- Copyright -->
+
+    </footer>
+
+
+
