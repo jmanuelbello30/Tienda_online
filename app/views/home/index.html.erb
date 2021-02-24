@@ -1,56 +1,78 @@
+    <!-- First NavBar to handle first title and input search -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="principal-title">La Tiendita</div>
         <a href="/" class="link-home">
-            <%= image_tag("inicio_tienda.png", style:"width: 70px; margin-right: 25px;") %>
+            <%= image_tag("inicio_tienda.png", class:"store-logo") %>
         </a>
+        <!-- form_tag to handle input search -->
         <%= form_tag('/') do -%>
             <button class="btn search_icon" type="submit"><span class="material-icons icon-s-size ">search</span></button>
+    <!-- text field, where the @search variable is called, found in home controller, which handles the search for products -->
             <%= text_field_tag 'search', @search, placeholder: ' Buscar (ej: Cerveza, Pisco, etc)' %>
         <% end -%>
     </nav>
+    <!-- First NavBar to handle first title and input search -->
 
+    <!-- Second NavBar to handle menu of products -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-mar">
+        <!-- The variable @categories found in the home controller is crossed with an each to show each category of products -->
             <%- @categories.each do |category| %>
                 <li class="nav-item">
+        <!-- href It will indicate the id of each product category, when selected, that way a filter is made in the controller based on the id of the category -->
                     <a href="/<%=category.id%>" class="letters-menu" aria-current="page">
+        <!-- category.name will display the name of each product category -->             
                         <%=category.name %>
                     </a>
                 </li>
             <% end %>
         </ul>
     </nav>
+    <!-- Second NavBar to handle menu of products -->
 
+    <!-- title to show product search -->
     <div class="category-title">
+    <!-- conditional to indicate if the search is empty, if it is, show the first category (no searches have been made), if not, show the search -->
         <% if(@search.blank?) %>
             <%=@current_category.name.titleize %> - Productos 
         <% else %>
+        <!-- Reflects the same characters that were inserted in the search input  -->
             RESULTADOS PARA: <%=@search %> 
         <% end %>
     </div>
+    <!-- title to show product search -->
 
+    <!-- Title when search is blank and card to show products -->
     <div class="container-fluid">
         <div class="row marg-row">
-                <% if(@products.blank?) %>   
-                    <div style="font-family: 'Fjalla One', sans-serif; font-size: 20px; margin-left: 16px;">No se encontraron resultados</div>
-                <% else %>
+            <!-- conditional to indicate if in the search or filter by categories, no products were found -->
+            <% if(@products.blank?) %>   
+                <div class="paragraph-seacrh">No se encontraron resultados</div>
+            <% else %>
+                <!-- Each product is reviewed and the card is filled with the information -->
                 <%- @products.each do |product| %>
+                    <!-- Card to show products -->
                     <div class="col-sm-3 separate-cards">  
                         <div class="card">
+                            <!-- Conditional to indicate if there is no image to display of the product, a default is shown -->
                             <% if(product.url_image.blank?) %> 
                                 <%= image_tag("no-image.jpg", :alt => "no hay imagen del producto", class:"card-img-top") %>
                             <% else %>
+                            <!-- If the image exists, the product image is displayed, as the card header -->
                                 <img src=<%=product.url_image %> class="card-img-top" alt="producto"></img>
                             <% end %>
-
+                            <!-- Information about product -->
                             <div class="card-body">
+                                <!-- The name of the product is displayed, accessing product.name -->
                                 <h5 class="card-title"><%=product.name %></h5>
+                                <!-- The name of the product is displayed, accessing product.price -->
                                 <p class="card-text">$<%=product.price %></p>
                                 <button type="button" class="btn btn-primary disabled"><span class="material-icons">add_shopping_cart</span></button>
-                                
+                                <!-- Conditional to indicate if the product does not have a discount, it is not shown on the card -->
                                 <% if(product.discount == 0) %> 
                                     <p class="card-text" style="color:white;">.</p>
                                 <% else %>
+                                    <!-- If there is a discount percentage of the product, it will be shown in the following format -->
                                     <p class="card-text">Producto en descuento <%=product.discount %>%</p>
                                 <% end %>
                             </div>
@@ -60,6 +82,7 @@
             <% end %>
         </div>
     </div>
+    <!-- Title when search is blank and card to show products -->
 
     <!-- Footer -->
     <footer class="pt-4 flex-shrink-0 bg-dark py-3">

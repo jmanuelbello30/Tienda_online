@@ -62,6 +62,10 @@
     display: inline-flex;
 }
 
+.store-logo{
+    width: 70px; margin-right: 25px;
+}
+
 /* input Search*/
 #search{
     border-radius: 10px;
@@ -126,6 +130,15 @@
 .marg-row{
     margin-right: 110px;
     margin-left: 110px;
+}
+
+/*Paragraph about search products*/
+
+.paragraph-seacrh{
+    font-family: 'Fjalla One', sans-serif; 
+    font-size: 20px; 
+    margin-left: 16px;
+    margin-bottom: 465px;
 }
 
 /*Cards for products*/

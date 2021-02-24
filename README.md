@@ -1,24 +1,30 @@
-# README
+# Tienda_online - Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Basic application made with ruby on rails.
 
-Things you may want to cover:
+Functionalities or tasks implemented in the project:
+   - Display of products grouped by category to which that belong.
+   - Added a search engine, implemented at the server level (This allows the products to arrive filtered to the
+    client).
+   - Added scroll to top.
 
-* Ruby version
+#### Technologies: HTML, CSS, Javascript, Rails.
 
-* System dependencies
+Gems installed in this project:
+   - font-awesome-rails.
+   - mysql2.
+   - bootstrap.
 
-* Configuration
+### System dependencies
+   - Ruby 2.6.6.
+   - Rails 6.0.3.3.
 
-* Database creation
+### Steps to install this project for first time: 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+1. $ git clone https://github.com/jmanuelbello30/tienda_online.git
+2. Install the project dependencies.
+3. $ cd tienda_online
+4. $ rails server 
+5. The application runs on localhost, check the port of your local, example: http://localhost:3000/
+```
