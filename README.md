@@ -28,3 +28,7 @@ Gems installed in this project:
 4. $ rails server 
 5. The application runs on localhost, check the port of your local, example: http://localhost:3000/
 ```
+
+**Additional notes:**
+- This project can be tested directly in [Demo](https://ecommerce-tienda.herokuapp.com/)
+- Responsive no available
